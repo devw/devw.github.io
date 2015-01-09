@@ -18,6 +18,13 @@
                 MathJax.Hub.Typeset(); // Tell MathJax to look for mathematics in the page again when that new content is produced.
             }
         };
+        setPdfStylesheet = function () {
+            // Remove the css reveal library.
+            $('head link[href*="reveal"]').remove();
+            $('section').removeAttr('style');
+            $('section').show();
+            $('.reveal>.progress').hide();
+        };
         revealConfig = {
             history: false,
             keyboard: {
@@ -29,13 +36,6 @@
             },
             progress: true, // Display a presentation progress bar
             touch: true // Enables touch navigation on devices with touch input
-        };
-        setPdfStylesheet = function () {
-            // Remove the css reveal library.
-            $('head link[href*="components-revealjs"]').remove();
-            $('section').removeAttr('style');
-            $('section').show();
-            $('.reveal>.progress').hide();
         };
 
         return ['$scope', '$timeout', function ($scope, $timeout) {
