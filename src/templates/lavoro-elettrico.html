@@ -1,0 +1,134 @@
+<section>
+    <h3>Lavoro elettrico, Potenziale elettrostatico</h3>
+    <ul>
+        <li>Lavoro della forza elettrica;</li>
+        <li>Potenzaiale elettrostatico;</li>
+        <li>Il campo come gradiente del potenziale;</li>
+        <li>Riepilogo</li>
+    </ul>
+</section>
+<section>
+    <section>
+        <h3>Lavoro e tensione elettrica</h3>
+        <ul>
+            <li>La forza che agisce su una carica, e che in quanto tale si chiama forza elettrica è espressa dalla formula:
+    \[
+    \vec{E} = \frac{\vec{F}}{q_0} \Rightarrow \vec{F} = q_0 * \vec{E}
+    \]
+            </li>
+            <li>Il lavoro della forza F lungo un percorso \(C_1\) è dato da:
+    \[
+    W = \int_{C_1} \vec{F} * d\vec{s} = q_0 * \int_{C_1} \vec{E} * d\vec{s}
+    \]
+            </li>
+            <li>Si definisce tensione elettrica tra i due punti A e B il rapporto \(\frac{W}{q_0}\)
+    \[
+    \text{Tensione elettrica} = \int_{C_1} \vec{E} * d\vec{s}
+    \]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Differenza di potenziale</h3>
+        <ul>
+            <li>Il lavoro di una forza elettrica si può espimere tramite un integrale di linea</li>
+            <li>Se il campo è elettrosttaico esso è anche conservativo (il lavoro non dipende dal percorso seguito) e quindi può sempre essere espresso come differenza dei valori di una funzione delle coordinate:
+\int_{A}^{B} \vec{E} * d\vec{s} = f(B) - f(A)
+            </li>
+            <li>All'opposto di questa funzione si da il nome di potenziale elettrostatico del campo \(\vec E\) che risulta definito come:
+\[
+V_A - V_B = \int_{A}^{B} \vec{E} * \vec{s}
+\]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Energia potenziale</h3>
+        <ul>
+            <li>L'energia potenziale elettrica \(U_E\) posseduta da una carica elettrica puntiforme \(q_0\) nella posizione r in presenza di un campo elettrico \(vec E\) è l'opposto del lavoro W compiuto dalla forza elettrostatica \(\vec{F} = q \vec{E}\)
+\[
+U_e(r) = - W_{A->B} = -\int_{A}^{B} = q_0 * V(A) - q_0 * V(B)
+\]
+<!-- \[
+W = q_0 * \int_{A}^{B} \vec{E} * d\vec{s} = 
+\frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_A} - \frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_B}
+\] -->
+            </li>
+            <img src="src/images/potenziale-elettrostatico.png">
+        </ul>
+    </section>
+</section>
+
+
+<section>
+    <section>
+        <h3>Flusso del campo elettrico</h3>
+        <ul>
+            <li>Si definisce flusso del campo \(\vec{E}\) attraverso la superficie d\(\Sigma\) la quantità scalare:
+\[
+d \Phi (\vec{E}) = \vec{E} * \vec{u_n} d\Sigma
+\]
+            </li>
+            <li>Su una superficie chiusa:
+\[
+\Phi(\vec{E}) = \oint_{\Sigma} \vec{E} * \vec{u_n} d\Sigma
+\]
+            </li>
+            <li>I contributi positivi all'integrale sono quelli per cui \(\vec{E} * \vec{u_n} > 0\)</li>
+            <li>I contributi negativi all'integrale sono quelli per cui \(\vec{E} * \vec{u_n} < 0\)</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Teorema di Gauss</h3>
+        <ul>
+            <li>Possiamo determina il campo \(\vec{E}\) nel caso in cui la distribuizione di carica presenti un elevato grado di simmetria</li>
+            <li>Si dimostra che:
+\[
+\Phi(\vec{E}) = \frac{q}{\varepsilon_0} \Rightarrow 
+E = \frac{q}{\varepsilon_0 * \Sigma}
+\]
+dove q è la carica posta all'interno della superficie chiusa.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Campo elettrostatico nell'intorno di uno strato superficiale di carica</h3>
+        <ul>
+            <li>La carica in un conduttore in equilibrio si distribuisce sulla superficie esterna.</li>
+            <li>Applico il teorema di Gaussa ad un cilindro come mostrato in figura
+                <img src="src/images/campo-elettrico-conduttori.png">
+            </li>
+            <li>
+\[
+d\Phi = E d\Sigma = \frac{dq}{\varepsilon_0} \Rightarrow 
+E = \frac{1}{\varepsilon_0} * \frac{dq}{d\Sigma}
+\]
+\[
+E = \frac{\Delta}{\varepsilon_0} \text{, dove } \Delta = \frac{dq}{d\Sigma}
+\]
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Capacità di un coduttore isolato</h3>
+        <ul>
+            <li>La carica di un coduttore isolato può essere calcolata come:
+q = \oint_{\Sigma} \Delta (x, y, y) d \Sigma
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Conduttori in equilibrio</h3>
+        <ul>
+            <li>Condizione di equilibrio di un conduttore:
+\[
+\vec{E} = 0 \text{ all'interno }
+\]
+            </li>
+        </ul>
+    </section>
+</section>
