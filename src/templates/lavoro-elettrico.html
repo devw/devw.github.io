@@ -33,7 +33,9 @@
         <ul>
             <li>Il lavoro di una forza elettrica si può espimere tramite un integrale di linea</li>
             <li>Se il campo è elettrosttaico esso è anche conservativo (il lavoro non dipende dal percorso seguito) e quindi può sempre essere espresso come differenza dei valori di una funzione delle coordinate:
+\[
 \int_{A}^{B} \vec{E} * d\vec{s} = f(B) - f(A)
+\]
             </li>
             <li>All'opposto di questa funzione si da il nome di potenziale elettrostatico del campo \(\vec E\) che risulta definito come:
 \[
@@ -44,17 +46,22 @@ V_A - V_B = \int_{A}^{B} \vec{E} * \vec{s}
     </section>
     <section>
         <h3>Energia potenziale</h3>
-        <ul>
-            <li>L'energia potenziale elettrica \(U_E\) posseduta da una carica elettrica puntiforme \(q_0\) nella posizione r in presenza di un campo elettrico \(vec E\) è l'opposto del lavoro W compiuto dalla forza elettrostatica \(\vec{F} = q \vec{E}\)
-\[
-U_e(r) = - W_{A->B} = -\int_{A}^{B} = q_0 * V(A) - q_0 * V(B)
-\]
-<!-- \[
-W = q_0 * \int_{A}^{B} \vec{E} * d\vec{s} = 
-\frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_A} - \frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_B}
-\] -->
-            </li>
-            <img src="src/images/potenziale-elettrostatico.png">
+        <div class="media">
+            <img class="pull-right media-object" src="src/images/potenziale-elettrostatico.png" width="27%">
+            <div class="media-body">
+                <ul>
+                    <li>L'energia potenziale elettrica \(U_E\) posseduta da una carica elettrica puntiforme \(q_0\) nella posizione r in presenza di un campo elettrico \(\vec E\) è l'opposto del lavoro W compiuto dalla forza elettrostatica \(\vec{F} = q \vec{E}\)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        \[
+        U_e(r) = - W_{A->B} = -\int_{A}^{B} q_0 * \vec{E} * d\vec{r} = q_0 * V(A) - q_0 * V(B)
+        \]
+        <!-- \[
+        W = q_0 * \int_{A}^{B} \vec{E} * d\vec{s} = 
+        \frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_A} - \frac{q_0 * q}{4 * \pi * \varepsilon_0 * \r_B}
+        \] -->
         </ul>
     </section>
 </section>
@@ -91,44 +98,29 @@ dove q è la carica posta all'interno della superficie chiusa.
             </li>
         </ul>
     </section>
+</section>
+<section>
     <section>
-        <h3>Campo elettrostatico nell'intorno di uno strato superficiale di carica</h3>
+        <h3>Campo elettrostatico nell'intorno di uno strato superficiale di carica 1/2</h3>
         <ul>
             <li>La carica in un conduttore in equilibrio si distribuisce sulla superficie esterna.</li>
             <li>Applico il teorema di Gaussa ad un cilindro come mostrato in figura
                 <img src="src/images/campo-elettrico-conduttori.png">
             </li>
-            <li>
+        </ul>
+    </section>
+    <section>
+        <h3>Campo elettrostatico nell'intorno di uno strato superficiale di carica 2/2</h3>
+        <ul>
+            <li>campo elettrostatico normale alla superficie (una componente tangenziale metterebbe in movimento le cariche elettriche)</li>
+            <li>Equilibrio in un conduttore se e solo se all'interno del conduttore \(\vec{F_{tot}} = 0 \Rightarrow \vec{E_{int}} = 0\)</li>
+        </ul>
 \[
-d\Phi = E d\Sigma = \frac{dq}{\varepsilon_0} \Rightarrow 
+d\Phi = E * d\Sigma = \frac{dq}{\varepsilon_0} \Rightarrow 
 E = \frac{1}{\varepsilon_0} * \frac{dq}{d\Sigma}
 \]
 \[
-E = \frac{\Delta}{\varepsilon_0} \text{, dove } \Delta = \frac{dq}{d\Sigma}
+E = \frac{\sigma}{\varepsilon_0} \text{, dove } \sigma = \frac{dq}{d\Sigma}
 \]
-            </li>
-        </ul>
-    </section>
-</section>
-<section>
-    <section>
-        <h3>Capacità di un coduttore isolato</h3>
-        <ul>
-            <li>La carica di un coduttore isolato può essere calcolata come:
-q = \oint_{\Sigma} \Delta (x, y, y) d \Sigma
-            </li>
-        </ul>
-    </section>
-</section>
-<section>
-    <section>
-        <h3>Conduttori in equilibrio</h3>
-        <ul>
-            <li>Condizione di equilibrio di un conduttore:
-\[
-\vec{E} = 0 \text{ all'interno }
-\]
-            </li>
-        </ul>
     </section>
 </section>
