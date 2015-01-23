@@ -1,0 +1,249 @@
+<section>
+    <h3>Onde elettromagnetiche</h3>
+    <ul>
+        <li>Magnetostatica nel vuoto;</li>
+        <li>Induzione elettromagnetica;</li>
+        <li>Equazioni di Maxwell;</li>
+        <li>Spettro elettromagnetico</li>
+        <li>Polarizzazione;</li>
+        <li>Interferenza;</li>
+        <li>Diffrazione;</li>
+    </ul>
+</section>
+<section>
+    <section>
+        <h3>Magnetostatica nel vuoto</h3>
+        <ul>
+            <li>L'elettrostatica studia le forze di interazione fra cariche elettriche ferme. Ogni carica elettrica q è soggetta ad una forza elettrostatica che può essere calcolata come il prodotto di q per un campo elettrico, generato da tutte le altre cariche.</li>
+            <li>La magnetostatica studia il campomagnetico del campo magnetico in condizioni statiche (campo magnetico non variabile nel tempo), proprio come abbiamo fatto per il campo elettrico.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Circuitazione e flusso del campo magnetico</h3>
+        <ul>
+            <li>Una corrente elettrica continua (non variabile nel tempo) genera nello spazio un campo magretico \(\vec{B}\) che soddisfa la seguente relazione:
+\[
+\oint_{C} \vec{B} * \vec{l} = \mu_0 * i 
+\]
+            </li>
+            <li>A causa della proprietà solenoidale del campo magnetico, il flusso di \vec{B} soddisfa la seguente relazione:
+\[
+\Phi_{S}(\vec{B}) = \oint_{S} \vec{B} * \vec{S} = 0
+\]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Forza di Lorentz</h3>
+        <ul>
+            <li>Una carica q che si muove in un campo magnetico \(\vec{B}\) subisce una forza \(\vec{F}\) espressa dal seguente prodotto vettoriale:
+\[
+\vec{F} = q * \vec{v} \times \vec{B}
+\]
+            </li>
+            <li>
+                Nel caso di un circuito filiforme C la formula è la seguente:
+\[
+d\vec{F} = dq * \vec{v} \times \vec{B} \Rightarrow d\vec{F} = dq * \frac{d\vec{l}}{dt} \times \vec{B}
+\\
+d\vec{F} = i * d\vec{l} \times \vec{B}
+\\
+\vec{F} = i * \int_{C} d\vec{l} \times \vec{B}
+\]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Regola della mano destra</h3>
+        <img src="src/images/mano-destra.svg">
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Induzione elettromagnetica</h3>
+        <ul>
+            <li>Quando un conduttore si muove in un campo magnetico \(\vec{B}\) gli elettroni liberi dentro di esso risentono di un campo elettrico:
+    \[
+    \vec{E} = \vec{v} \times \vec{B}
+    \]
+            </li>
+            <li>La tensione presente ai capi di un conduttore che si muove in un campo magnetico \(\vec{B}\) sarà:
+    \[
+    f.e.m. = \int_a^b \vec{E} * d\vec{l} = \int_a^b \vec{v} \times \vec{B} * d\vec{l}
+    \]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Legge di Faraday</h3>
+        <ul>
+            <li>Si può dimostrare che la f.e.m. è esprimibile tramite la variazione del flusso di \(\vec{B}\) attraverso la superficie del circuito:
+\[
+f.e.m. = - \frac{d\Phi(B)}{dt}
+\]
+            </li>
+        </ul>
+        <img src="src/images/legge-faraday.gif">
+    </section>
+    <section>
+        <h3>Legge di Lentz</h3>
+        <ul>
+            <li>Se il circuito è conduttore con una resistenza R, in esso circola una corrente i data dalla legge di Ohm:
+\[
+i = \frac{f.e.m.}{R} = - \frac{1}{R} * \frac{d\Phi(B)}{dt}
+\]
+            </li>
+            <li>Il verso della corrente (corrente indotta), espresso dal segno negativo, è tale che il flusso del campo magnetico \(\vec{B}\) da essa stessa generato si oppone alla variazione di flusso.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Circuitazione del campo elettrico ni presenza di campi magnetici variabili</h3>
+        <ul>
+            <li>Fenomini di induzione elettromagnetica si verificano anche quando varia nel tempo il campo magnetico \(\vec{B}\)</li>
+            <li>La variazione del campo magnetico può essere espressa in termini matematici dalla formula:
+\[
+\frac{\partial \vec{B}}{\partial t} \neq 0 
+\]
+            </li>
+            <li>Nel caso in cui \(\frac{\partial \vec{B}}{\partial t} \neq 0\) la circuitazione del campo elettrico non è più uguale a zero:
+\[
+\oint_{C} \vec{E} * d\vec{s} = - \frac{d}{dt} \int_S \vec{B} * d\vec{s}
+\]
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Equazioni di Maxwell</h3>
+        <h3>Onde elettromagnetiche</h3>
+    </section>
+    <section>
+        <h3>Equazioni di Maxwell per fenomeni non variabili nel tempo</h3>
+\[
+\Phi(\vec{E}) = \oint_S \vec{E} * \vec{S} = \frac{q}{\varepsilon_0} \text{  (legge di Gauss)}
+\\
+\oint_{C} \vec{E} * \vec{s} = 0 \text{  (campo conservativo)}
+\\
+\Phi(\vec{B}) = \oint_S \vec{B} * \vec{S} = 0 \text{ (campo solenoidale)}
+\\
+\oint_{B} \vec{B} * \vec{s} = \mu_0 * i \text{ (campo non conservativo)}
+\]
+    </section>
+    <section>
+        <h3>Equazioni di Maxwell per fenomeni variabili nel tempo</h3>
+\[
+\oint_S \vec{E} * \vec{S} = \frac{q}{\varepsilon_0} 
+\\
+\oint_{C} \vec{E} * \vec{s} = -\frac{\partial }{\partial t}  \int_S \vec{B} * \vec{S}
+\\
+\oint_S \vec{B} * \vec{S} = 0
+\\
+\oint_{B} \vec{B} * \vec{s} = \mu_0 * i + \frac{1}{c^2} \frac{\partial }{\partial t}  \int_S \vec{E} * \vec{S}
+\]
+    </section>
+    <section>
+        <h3>Equazioni delle onde</h3>
+        <ul>
+            <li>
+            Dalle equazioni di Maxwell è possibile ricavare (per lo spazio vuoto) le seguenti equazioni:
+\[
+\bigtriangledown^2 \vec{E} - \varepsilon_0 * \mu_0 \frac{\partial^2 \vec{E}}{\partial t^2}
+\\
+\\
+\bigtriangledown^2 \vec{B} - \varepsilon_0 * \mu_0 \frac{\partial^2 \vec{B}}{\partial t^2}
+\]
+            </li>
+            <li>Il campo magnetico e il campo elettrico soddisfanno la stessa equazione nota come equazione dell onde;</li>
+            <li>La sua soluzione rappresenta una funzione che si propoga con velocità c.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Proprietà delle onde elettromagnetiche</h3>
+        <ul>
+            <li>I campi \(\vec{E}\) e \(\vec{B}\) sono ortogonali tra loro e alla direzione di propagazione.</li>
+            <li>La propagazione avviene lungo l'asse x e il verso è individuato dal prodoto vettoriale \(\vec{E} \times \vec{B} \)</li>
+            <li>I moduli dei campi sono legati dalla relazione:
+\[
+\vec{E} = c \vec{B}
+\\
+c^2 = \frac{1}{\varepsilon_0 * \mu_0}
+\]
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Propagazione dell'onda elettromagnetica</h3>
+        <img src="src/images/profilo-onda-elettromagnetica.jpg">
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Spettro elettromagnetico</h3>
+        <ul>
+            <li>Lo spettro elettromagnetico, in fisica, indica l'insieme di tutte le possibili frequenze delle radiazioni elettromagnetiche;</li>
+            <li>Le radiazioni elettromagnetiche sono caratterizzate da una lunghezza d'onda e da una frequenza;</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Suddivisione in bande</h3>
+        <ul>
+            <li><strong>Radiazione ultravioletta</strong>: Le radiazione con una lunghezza d'onda inferiore a 400 nm è denominata luce ultravioletta.  La parte inferiore dello spettro si compone di onde denominate raggi gamma; Il campo di raggi gamma rappresenta il risultato della disintegrazione radioattiva.</li>
+            <li><strong>Radiazione infrarossa</strong>: Dalla parte dello spettro, dove la luce ha lunghezza d'onda maggiore, cioè oltre il rosso, si trova la zona denominata infrarossa. </li>
+            <li><strong>Spettro ottico</strong>: è interessante rilevare che solo una parte assai limitata dello spettro contiene radiazioni visibili all'occhio.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Tabella dello spettro elettromagnetico</h3>
+        <img src="src/images/spettro-elettromagnetico.png">
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Polarizzazione di un'onda - introduzione</h3>
+        <ul>
+            <li>Il concetto di polarizzazione è associato a tutte le onde trasversali, quelle cioè che oscillano in direzione non coincidente con quella di propagazione.</li>
+            <li>l'onda e.m. è costituita da un campo elettrico ed uno magnetico accoppiati, i quali vengono descritti in ogni punto dello spazio ed in ogni istante di tempo da un vettore, che ne indica intensità, direzione e verso.</li>
+            <li>l'intensità del campo elettrico e magnetico varia come una funzione oscillante sinusoidale.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Piano di polarizzazione</h3>
+        <ul>
+            <li>pur essendo noti l'intensità del campo in ogni punto ed in ogni istante e pur sapendo che esso è ortogonale alla direzione di propagazione, resta da definire la direzione esatta del vettore, tra le infinite possibili.</li>
+            <li>Il piano sul quale il vettore giace è detto "piano di polarizzazione"</li>
+        </ul>
+        <img src="src/images/piano-polarizzazione.gif">
+    </section>
+    <section>
+        <h3>Polarizzazione</h3>
+        <ul>
+            <li><strong>Polarizzazione lineare</strong>: è possibile che, restando fermi in un punto, si osservi che il piano di polarizzazione dell'onda rimanga costante nel tempo, ovvero che il campo vari di intensità ma mantenendo sempre la stessa direzione.
+        </ul>
+    </section>
+    <section>
+        <h3>Polarizzazione</h3>
+        <iframe width="1080" height="620" src="//www.youtube.com/embed/Fu-aYnRkUgg" frameborder="0" allowfullscreen></iframe>    </section>
+    <section>
+        <h3>Applicazioni della polarizzazione 1/2</h3>
+        <ul>
+            <li>il campo elettrico descrive la capacità dell'onda di spostare cariche elettriche (per es. gli elettroni in un materiale conduttivo), dunque la polarizzazione esprime la direzione nella quale queste cariche verranno spostate.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Applicazioni della polarizzazione 2/2</h3>
+        <ul>
+            <li>Un'antenna dipolare (un bastone di metallo) essa sarà in grado di captare un'onda elettromagnetica (un'onda radio) solo se orientata sul suo piano di polarizzazione, perché solo in tal caso gli elettroni del metallo potranno spostarsi lungo la struttura, inducendo un segnale nel cavo collegato all'antenna.</li>
+            <li>Questo permette per esempio di trasmettere due segnali radio alla stessa frequenza senza che interferiscano tra loro, semplicemente trasmettendoli con piani di polarizzazione ortogonali, in quanto sarà sufficiente orientare diversamente l'antenna per captare l'uno o l'altro</li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <ul>
+            <li>la luce visibile contiene generalmente pacchetti d'onda con polarizzazioni orientate in modo casuale, però è possibile selezionare solo quelli con polarizzazione voluta, servendosi di filtri polarizzatori</li>
+            <li>i filtri polarizzatori sono formati da depositi di molecole di aspetto allungato su un supporto plastico trasparente</li>
+            <li>i filtri polarizzatori sono in grado di intercettare (come minuscole antenne) solo le onde polarizzate nel verso lungo il quale sono state disposte.</li>
+            <li>Sovrapponendo due filtri disposti in modo ortogonale si ha completo assorbimento della luce, mentre ruotandoli mutuamente si può variare un flusso luminoso con continuità.</li>
+        </ul>
+    </section>
+</section>
