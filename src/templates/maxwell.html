@@ -121,25 +121,25 @@ i = \frac{f.e.m.}{R} = - \frac{1}{R} * \frac{d\Phi(B)}{dt}
     <section>
         <h3>Equazioni di Maxwell per fenomeni non variabili nel tempo</h3>
 \[
-\Phi(\vec{E}) = \oint_S \vec{E} * \vec{S} = \frac{q}{\varepsilon_0} \text{  (legge di Gauss)}
+\Phi_S(\vec{E}) = \oint_S \vec{E} * d\vec{S} = \frac{q}{\varepsilon_0} \text{  (legge di Gauss)}
 \\
-\oint_{C} \vec{E} * \vec{s} = 0 \text{  (campo conservativo)}
+\Gamma_C(\vec{E}) = \oint_{C} \vec{E} * d\vec{l} = 0 \text{  (campo conservativo)}
 \\
-\Phi(\vec{B}) = \oint_S \vec{B} * \vec{S} = 0 \text{ (campo solenoidale)}
+\Phi_S(\vec{B}) = \oint_S \vec{B} * d\vec{S} = 0 \text{ (campo solenoidale)}
 \\
-\oint_{B} \vec{B} * \vec{s} = \mu_0 * i \text{ (campo non conservativo)}
+\Gamma_C(\vec{B}) = \oint_{C} \vec{B} * d\vec{l} = \mu_0 * i \text{ (campo non conservativo)}
 \]
     </section>
     <section>
         <h3>Equazioni di Maxwell per fenomeni variabili nel tempo</h3>
 \[
-\oint_S \vec{E} * \vec{S} = \frac{q}{\varepsilon_0} 
+\oint_S \vec{E} * d\vec{l} = \frac{q}{\varepsilon_0} 
 \\
-\oint_{C} \vec{E} * \vec{s} = -\frac{\partial }{\partial t}  \int_S \vec{B} * \vec{S}
+\oint_{C} \vec{E} * d\vec{s} = -\frac{\partial }{\partial t}  \int_S \vec{B} * d\vec{S}
 \\
-\oint_S \vec{B} * \vec{S} = 0
+\oint_S \vec{B} * d\vec{S} = 0
 \\
-\oint_{B} \vec{B} * \vec{s} = \mu_0 * i + \frac{1}{c^2} \frac{\partial }{\partial t}  \int_S \vec{E} * \vec{S}
+\oint_{C} \vec{B} * d\vec{l} = \mu_0 * i + \frac{1}{c^2} \frac{\partial }{\partial t}  \int_S \vec{E} * d\vec{S}
 \]
     </section>
     <section>
@@ -165,6 +165,7 @@ i = \frac{f.e.m.}{R} = - \frac{1}{R} * \frac{d\Phi(B)}{dt}
             <li>La propagazione avviene lungo l'asse x e il verso è individuato dal prodoto vettoriale \(\vec{E} \times \vec{B} \)</li>
             <li>I moduli dei campi sono legati dalla relazione:
 \[
+\\
 \vec{E} = c \vec{B}
 \\
 c^2 = \frac{1}{\varepsilon_0 * \mu_0}
