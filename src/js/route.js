@@ -16,13 +16,15 @@
         'views/slides/lavoro-elettrico.view',
         'views/slides/maxwell.view',
         'views/scores/score-1.view',
-        'views/scores/score-2.view'
+        'views/scores/score-2.view',
+        'views/scores/score-3.view',
+        'views/scores/score-final.view'
     ], function (
         indexView, biotechnologyView, slidesView, unitView,
         kinematicView, mechanicView, workView, fluidView,
         thermodynamics1View, thermodynamics2View,
         electrostaticsView, lavoroElettricoView, maxwellView,
-        score1View, score2View) {
+        score1View, score2View, score3View, scoreFinalView) {
         return ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
@@ -40,7 +42,9 @@
                 .state('slides.lavoro-elettrico', lavoroElettricoView)
                 .state('slides.maxwell', maxwellView)
                 .state('score-1', score1View)
-                .state('score-2', score2View);
+                .state('score-2', score2View)
+                .state('score-3', score3View)
+                .state('score-final', scoreFinalView);
         }];
     });
 }(this.define));
