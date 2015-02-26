@@ -2,13 +2,11 @@
     'use strict';
 
     define([
-        'text!../../../templates/unit-of-measurement.html',
+        'text!../../../templates/prerequisites.html',
     ], function (hardwareTemplate) {
 
-        var vendor_dir = 'bower_components/';
-
         return {
-            url: '/unit-of-measurement',
+            url: '/prerequisites',
             data: {
                 css: [
                     'src/css/revealjs_themes/sky.css'
