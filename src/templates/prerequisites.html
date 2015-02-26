@@ -1,0 +1,126 @@
+<section>
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>Git</li>
+        <li>Node.js</li>
+        <li>Bower</li>
+    </ul>
+    <hr>
+    <p>Antonio Pierro <a href="https://twitter.com/an_pierro">@an_pierro</a></p>
+    <hr>
+    <p class="reveal"><small> If there are any mistakes, requests or comments, you can send an email to antonio.pierro[at]gmail.com</small></p>
+</section>
+<section>
+    <section>
+        <h2>Setup git for windows</h2>
+        <ul>
+            <li>Git is a distributed revision control system</li>
+            <li>Download and install "git bash" for windows.</li>
+            <li><a href="http://git-scm.com/download/win">http://git-scm.com/download/win</a></li>
+        </ul>
+    </section>
+    <section>
+        <h3>Generating SSH keys</h3>
+        <ul>
+            <li>Windows OS:
+                <pre>
+    > # windows
+    > ssh-keygen.exe
+    > cat .ssh/id_rsa.pub | clip
+                </pre>
+            </li>
+            <li>OSX users:
+                <pre>
+    > # osx
+    > ssh-keygen
+    > more .ssh/id_rsa.pub | pbcopy
+                </pre>
+            </li>
+            <li>Add your SSH key to your GitHub account.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Change the URI (URL) for a remote Git repository</h3>
+        <ul>
+            <li>Manage the set of repositories ("remotes") whose branches you track.</li>
+            <li>View existing remotes:
+                <pre>
+    > git remote -v
+    # origin  https://github.com/user/repo.git (fetch)
+    # origin  https://github.com/user/repo.git (push)
+                </pre>
+            </li>
+            <li>Change the 'origin' remote's URL:
+                <pre>
+    > git remote set-url \
+    origin ssh://git@github.com/user/repo.git
+
+
+    > git remote -v
+    # Verify new remote URL
+    # origin  ssh://git@github.com/user/repo.git (fetch)
+    # origin  ssh://git@github.com/user/repo.git (push)
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Git commands</h3>
+        <ul>
+            <li>
+                Removing multiple files from a Git repository that have already been deleted from disk:
+                <pre>
+    git rm $(git ls-files --deleted)
+                </pre>
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Node.js</h3>
+        <ul>
+            <li>Node.js is an open source, cross-platform runtime environment for server-side and networking applications</li>
+            <li>npm is a package manager for JavaScript, and is the default for Node.js</li>
+            <li>npm is bundled and installed automatically with Node.js</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Create a package.json file</h3>
+        <ul>
+            <li>This will ask you a bunch of questions, and then write a package.json for you:
+                <pre>
+    > mkdir 01app
+    > cd 01app
+    > mkdir app
+    > mkdri test
+
+    # Create a package.json file
+    > npm init
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Install packages</h3>
+        <ul>
+            <li>This command installs a package, and any packages that it depends on.
+                <pre>
+    npm install karma --save-dev
+    npm install karma-jasmine --save-dev
+    npm install karma-chrome-launcher --save-dev
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <ul>
+            <li>
+                <pre>
+    export PATH=node_modules/karma/bin:$PATH
+                </pre>
+            </li>
+        </ul>
+    </section>
+</section>

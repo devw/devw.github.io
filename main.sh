@@ -2,7 +2,7 @@
 
 # Bower installs packages to bower_components/ directory
 # Bower keeps track of these packages in a manifest file, 'bower.json'.
-bower install
+# bower install
 
 # The app.build.js is a computed configuration
 # Since r.js is not designed to execute what it passed to mainConfigFile,
@@ -23,6 +23,7 @@ node  ../../bower_components/r.js/dist/r.js -o app.build.css
 cd -
 
 # Remove the packages after running the optimize
-rm -rf bower_components
+# rm -rf bower_components
+
 # Restore the app.build.js from a not computed to a computed configuration
 mv $MAIN_FILE_BKP $MAIN_FILE
