@@ -1,0 +1,529 @@
+<section>
+    <h2>AngularJS unit-testing</h2>
+    <ul>
+        <li>Angular/Jasmine, Setup</li>
+        <li>Angular/Jasmine, Bower</li>
+        <li>Angular/Jasmine, Controller Testing</li>
+        <li>Angular/Jasmine, Filter Testing</li>
+    </ul>
+    <hr>
+    <p>Antonio Pierro <a href="https://twitter.com/an_pierro">@an_pierro</a></p>
+    <hr>
+    <p class="reveal"><small> If there are any mistakes, requests or comments, you can send an email to antonio.pierro[at]gmail.com</small></p>
+</section>
+<section>
+    <section>
+        <h3>Angularjs</h3>
+        <ul>
+            <li>AngularJS is a MVC framework;</li> 
+            <li>It has been created and promoted by google;</li>
+            <li>It defines numerous concepts to properly organize a web application;</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Interest in Angularjs</h3>
+        <ul>
+            <li>    
+                <a target="_" href="http://www.indeed.com/jobtrends?q=angularjs%2C+Backbone.js%2C+ember.js%2C+Knockout.js&l=">Percentage of matching job postings:</a>
+            </li>
+        </ul>
+        <div style="width:940px">
+            <a href="http://www.indeed.com/jobtrends?q=angularjs%2C+Backbone.js%2C+ember.js%2C+Knockout.js" title="angularjs, Backbone.js, ember.js, Knockout.js Job Trends">
+            <img width="840" src="http://www.indeed.com/trendgraph/jobgraph.png?q=angularjs%2C+Backbone.js%2C+ember.js%2C+Knockout.js" border="0" alt="angularjs, Backbone.js, ember.js, Knockout.js Job Trends graph">
+            </a>
+        </div>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Javascript - assert</h3>
+        <ul>
+            <li>C, C++, C# have the assert macro.</li>
+            <li>Assert(Boolean, String): checks for a condition; if the condition is false, outputs a specified message and displays a message box.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Quick and Easy JavaScript Testing</h3>
+        <ul>
+            <li>html code
+<pre>
+    &lt;ul id="output">&lt;/ul>
+</pre>
+            </li>
+            <li>javascript code
+                <pre>
+    var assert = function (outcome, description) {
+        var li = document.createElement('li');
+
+        li.className = outcome ? 'pass' : 'fail';
+        li.appendChild(document.createTextNode(description));
+        output.appendChild(li);
+    }
+                </pre> 
+            </li>
+        </ul>
+
+    </section>
+    <section>
+        <h3>Test using assert</h3>
+        <pre>
+            var someArray = [1,2,3,4,5],
+                len = someArrayLen = someArray.length(),
+                i = 0;
+
+            for(; i < someArrayLen; i++) {
+                setTimeout(function () {
+                        assert(count++ === i, 'Checking the value of; ' + i);
+                }, i * 300); 
+            }
+        </pre>
+    </section>
+    <section>
+        <h3>Style of assert function</h3>
+        <pre>
+    &lt;style> 
+        .pass:before {
+            content: 'PASS ';
+            color: blue;
+            font-weight: bold;
+        }
+
+        .fail:before {
+            content: 'FAIL ';
+            color: red;
+            font-weight: bold;
+        }
+    &lt;/style>
+        </pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Karma</h3>
+        <ul>
+            <li>Karma is a JavaScript command line tool which loads your application's source code and executes your tests</li>
+            <li>Interactively create a package.json file:
+                <pre>
+
+    > npm init
+                </pre>
+            </li>
+            <li>Karma Installation
+                <pre>
+
+    > npm install karma --save
+    > npm install karma-jasmine --save
+    > npm install karma-chrome-launcher --save
+    > npm install karma-firefox-launcher --save
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Create the first test with Jasmine</h3>
+        <ul>
+            <li>
+                <pre>
+    > touch test/test.js
+
+    describe('True test', function() {
+        it('Should be true', function() {
+            expect(true).toBeTruthy();
+        });
+    });
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>karma configuration, start</h3>
+        <ul>
+            <li>
+                The configuration file can be generated using "karma init":
+                <pre>
+                    
+    > karma init
+
+    Do you want to capture a browser automatically?
+    > Chrome
+    > Firefox
+
+    What is the location of your source and test files?
+    > test/**/*.js
+                </pre>
+            </li>
+            <li>
+                Start Karma using your configuration:
+                <pre>
+
+    > karma start karma.conf.js
+
+INFO [Firefox 34.0.0 (Mac OS X 10.9)]: Connected on socket xW8 with id 64
+Firefox 34.0.0 (Mac OS X 10.9): Executed 1 of 1 SUCCESS (0.01 secs / 0.001 secs)
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Travis CI</h3>
+        <ul>
+            <li>Travis CI is an open-source hosted, distributed[1] continuous integration service used to build and test projects hosted at GitHub.</li>
+            <li>Travis CI is configured by adding a file named .travis.yml, which is a YAML format text file, to the root directory of the GitHub repository.</li>
+        </ul>
+        <pre>
+    language: node_js
+    node_js:
+      - "0.12"
+    before_script:
+      - npm update -g npm
+        </pre>
+    </section>
+    <section>
+        <h3>composer.json</h3>
+        <pre>
+{
+    ...,
+    "scripts": {
+        "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+    },
+    "dependencies": {
+        "jasmine-core": "^2.2.0",
+        "karma": "^0.12.31",
+        "karma-chrome-launcher": "^0.1.7",
+        "karma-firefox-launcher": "^0.1.4",
+        "karma-jasmine": "^0.3.5",
+        "karma-phantomjs-launcher": "^0.1.4"
+    },
+    ...
+}
+        </pre>
+    </section>
+</section>
+<section>
+    <h2>Angular/Jasmine, Setup</h2>
+    <ul>
+        <li>Create the following directory structure:
+            <pre>
+
+> mkdir -p angular_test/{app,test}
+
+> tree angular_test
+
+angular_test/
+├── app
+└── test
+            </pre>
+        </li>
+        <li>
+            To install tree command
+            <pre>
+
+# OSx Users
+> brew install tree
+> sudo port install tree
+> fink install tree
+
+# Windows OS
+> export PATH=/c/Windows/System32/:$PATH
+            </pre>
+        </li>
+    </ul>
+</section>
+<section>
+    <section>
+        <h3>Install third-party dependencies</h3>
+        <ul>
+            <li>
+                <pre>
+                    
+    > bower install angular 
+    > bower install angular-mocks
+    > bower install angular-resource
+                </pre>
+            </li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Dependency Injection</h3>
+        <ul>
+            <li>Angular comes with dependency injection built-in, which makes testing components much easier</li>
+            <li>You can pass in a component's dependencies and stub or mock them as you wish.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>How AngularJS Dependency Injection Works</h3>
+        <ul>
+            <li>Convert Javascript Object (incl. functions) to String
+                <pre>
+        var foo = function(par1, par2) {
+            return true;
+        };
+        foo.toString();
+        # "function (par1, par2) {
+        #    return true;
+        # }"
+                </pre>
+            </li>
+            <li>
+                The definition can then be parsed and the function arguments can be extracted. 
+                <pre>
+        angular.injector().annotate(foo);
+        # ["par1", "par2"]
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Dependency Annotation</h3>
+        <ul>
+            <li>There are three ways of annotating your code with service name information:
+                <ul>
+                    <li>Using the $inject property annotation</li>
+                    <li>Implicitly from the function parameter names (has caveats)</li>
+                    <li>Using the inline array annotation (preferred)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>$inject Property Annotation</h3>
+        <pre>
+    var myController = function($scope, greeter) {
+        // ...
+    }
+    myController.$inject = ['$scope', 'greeter'];
+    someModule.controller('myController', myController);
+        </pre>
+        <ul>
+            <li>In this scenario the ordering of the values in the $inject array must match the ordering of the parameters in MyController.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Implicit Annotation</h3>
+        <pre>
+    someModule.controller('MyController', function($scope, greeter) {
+        // ...
+    });
+        </pre>
+        <ul>
+            <li>You can also freely reorder dependencies.</li>
+            <li>If you plan to minify your code, your service names will get renamed and break your app.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Inline Array Annotation</h3>
+        <pre>
+    someModule.controller('MyController', ['$scope', 'greeter', function($scope, greeter) {
+        // ...
+    }]);
+        </pre>
+        <ul>
+            <li>Here we pass an array whose elements consist of a list of strings (the names of the dependencies) followed by the function itself.</li>
+            <li>When using this type of annotation, take care to keep the annotation array in sync with the parameters in the function declaration.</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Retrieving Scopes from the DOM</h3>
+        <ul>
+            <li>Right click on the element of interest in your browser and select 'inspect element'.</li>
+            <li>The debugger allows you to access the currently selected element in the console as $0 variable.</li>
+            <li>To retrieve the associated scope in console execute: angular.element($0).scope()</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3></h3>
+        <ul>
+            <li>angular.mock.module</li>
+            <li>angular.mock.inject</li>
+        </ul>
+    </section>
+    <section>
+        <h3>angular.mock.module</h3>
+        <ul>
+            <li>This function registers a module configuration code.</li>
+            <li>It collects the configuration information which will be used when the injector is created by inject.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>angular.mock.inject</h3>
+        <ul>
+            <li>The inject function wraps a function into an injectable function.</li>
+            <li>The inject() creates new instance of $injector per test, which is then used for resolving references.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Resolving References (Underscore Wrapping)</h3>
+        <ul>
+            <li>Often, we would like to inject a reference once, in a beforeEach() block and reuse this in multiple it() clauses.</li>
+            <li>To be able to do this we must assign the reference to a variable that is declared in the scope of the describe() block.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>angular.mock.inject example</h3>
+        <pre>
+
+    // Defined out reference variable outside
+    var myService;
+
+    // Wrap the parameter in underscores
+    beforeEach( inject( function(_myService_){
+        myService = _myService_;
+    }));
+
+    // Use myService in a series of tests.
+    it('makes use of myService', function() {
+        myService.doStuff();
+    });
+        </pre>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Angular/Jasmine, Controller Testing</h3>
+        <pre>
+
+    > mkdir app/controllers; touch app/controllers/pie.controller.js
+
+    > tree -I "node_modules|bower_components"
+
+├── app
+│   └── controllers
+│       └── pie.controller.js
+├── karma.conf.js
+├── package.json
+└── test
+    └── test.js
+        </pre>
+    </section>
+    <section>
+        <h3>pie.controller.js</h3>
+        <pre>
+/*global angular*/
+angular
+    .module('pie', [])
+    .controller('pieController', ['$scope', function ($scope) {
+        'use strict';
+        $scope.eatSlice = function () {
+            if ($scope.slices) {
+                $scope.slices = $scope.slices - 1;
+            }
+        };
+
+        $scope.slices = 8;
+    }]);
+
+        </pre>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Protractor</h3>
+        <ul>
+            <li>Protractor is a Node.js program;</li>
+            <li>It is a framework to run tests as karma;</li>
+            <li>It is for AngularJS applications.</li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <pre>
+    > npm install -g protractor
+    > protractor --version
+    > npm -g list # list of the installed packaged
+    > # when you install protractor you install also selenium-webdriver
+        </pre>
+    </section>
+    <section>
+        <h3>Protractor prerequisites</h3>
+        <ul>
+            <li>Protractor works with the Selenium WebDriver and Selenium Server: java jdk
+                <pre>
+    > java -version 
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <pre>
+    > webdriver-manager update --standalone # to download or update the selenium-server-standalone
+    > webdriver-manager start  # to start selenium server
+        </pre>
+    </section>
+    <section>
+        <h3>Navigate in node modules directly</h3>
+        <ul>
+            <li>In protector folder we will find the example:
+                <pre>
+    > cd AppData/Roaming/npm/node_modules/protactor/examples
+    > protractor conf.js # to run a test
+
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Protractor Locators</h3>
+        <ul>
+            <li>protractor.By.className('redBtn')</li>
+            <li>protractor.By.css('.redBtn')</li>
+            <li>protractor.By.id('loginButton')</li>
+            <li>protractor.By.linkText('Go Home')</li>
+            <li>protractor.By.partialLinktext('Home')</li>
+            reference: AngularJS E2E Testing Using Protractor
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <ul>
+            <li>Data Provider Pattern</li>
+            <li>module pattern</li>
+            <li>function-expression</li>
+            <li>IIFE, which stands for Immediately Invoked Function Expression.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>beforeEach, afterEach </h3>
+    </section>
+    <section>
+        <h3>Writing css expression</h3>
+    </section>
+    <section>
+        <h3>Page object pattern</h3>
+    </section>
+    <section>
+        <h3>Data Provider Pattern</h3>
+        <ul>
+            <li>DRYing Up Your JavaScript Jasmine Tests With the Data Provider Pattern</li>
+            <li>http://blog.jphpsf.com/2012/08/30/drying-up-your-javascript-jasmine-tests</li>
+            <li>https://github.com/dfkaye/where.js</li>
+        </ul>
+    </section>
+</section>
+<section>
+    <ul>
+        <li>try to automate everything</li>
+        <li>you have rely on tests</li>
+        <li>Karma is agnostic testing framework</li>
+    </ul>
+</section>
+<section>
+    <h3>References</h3>
+    <ul>
+        <li><a href="https://docs.angularjs.org/guide/unit-testing">Angularjs Unit Testing</a></li>
+        <li>http://afsy.fr/avent/2013/16-symfony-et-angularjs-tips</li>
+        <li>http://www.syntaxsuccess.com/articleList/unittesting</li>
+    </ul>
+</section>

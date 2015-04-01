@@ -1,0 +1,103 @@
+<section>
+    <h2>Symfony testing</h2>
+    <ul>
+        <li>Symfony, Introduction</li>
+    </ul>
+    <hr>
+    <p>Antonio Pierro <a href="https://twitter.com/an_pierro">@an_pierro</a></p>
+    <hr>
+    <p class="reveal"><small> If there are any mistakes, requests or comments, you can send an email to antonio.pierro[at]gmail.com</small></p>
+</section>
+<section>
+    <section>
+        <h3>Symfony</h3>
+        <ul>
+            <li>Symfony is a PHP web application framework for MVC applications;</li>
+            <li>It aims to speed up the creation and maintenance of web applications and to replace repetitive coding tasks;</li>
+            <li>Symfony makes use of existing PHP open-source projects as part of the framework, including:
+                <ul>
+                    <li>Propel or Doctrine as object-relational mapping layers;</li>
+                    <li>PHPUnit, a unit testing framework;</li>
+                    <li>Twig, a templating engine.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Interest in Symfony</h3>
+        <ul>
+            <li><a target="_" href="http://www.indeed.com/jobtrends?q=symfony%2C+laravel%2C+cake+php%2C+CodeIgniter&l=">Percentage of matching job postings:</a></li>
+        </ul>
+        <div style="width:940px">
+            <a href="http://www.indeed.com/jobtrends?q=symfony%2C+laravel%2C+cake+php%2C+Yii+Framework%2C+CodeIgniter" title="symfony, laravel, cake php, Yii Framework, CodeIgniter Job Trends">
+            <img width="940" src="http://www.indeed.com/trendgraph/jobgraph.png?q=symfony%2C+laravel%2C+cake+php%2C+Yii+Framework%2C+CodeIgniter" border="0" alt="symfony, laravel, cake php, Yii Framework, CodeIgniter Job Trends graph">
+            </a>
+        </div>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Composer and PHPUnit</h3>
+        <pre>
+
+    > mkdir tests; touch tests/CalculatorTest.php
+
+    > mkdir -p app/libraries; touch app/libraries/Calculator.php
+
+    > tree 
+
+    ├── README.md
+    ├── app
+    │   └── libraries
+    │       └── Calculator.php
+    └── tests
+        └── CalculatorTest.php
+        </pre>
+    </section>
+    <section>
+        <h3>Composer.json</h3>
+        <pre>
+    {
+        "autoload": {
+            "classmap": [
+                "app/libraries"
+            ]
+        }
+    }
+        </pre>
+    </section>
+    <section>
+        <h3>Composer</h3>
+        <ul>
+            <li>Composer commands
+                <pre>
+
+    composer install
+    composer dump-autoload
+                </pre>
+            </li>
+            <li>packagist: https://packagist.org/
+            </li>
+            <li></li>
+        </ul>
+
+    </section>
+    <section>
+        <h3>phpunit.xml</h3>
+        <pre>
+    &lt;phpunit bootstrap="vendor/autoload.php">
+        &lt;testsuites>
+            &lt;testsuite name="App tests">
+                &lt;directory>test&lt;/directory>
+            &lt;/testsuite>
+        &lt;/testsuites>
+    &lt;/phpunit>
+        </pre>
+    </section>
+    <section>
+        <h3>Test code</h3>
+        <ul>
+            <li>https://github.com/devw/php_test</li>
+        </ul>
+    </section>
+</section>

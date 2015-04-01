@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assert shocase</title>
+</head>
+<body>
+    <ul id="result"></ul>
+
+    <script>
+var assert = function assert (outcome, description) {
+    var li = document.createElement('li');
+
+    li.className = outcome ? 'Pass' : 'Fail';
+    li.appendChild(document.createTextNode(description));
+
+    result.appendChild(li);
+}
+
+assert(1 + 1 === 2, '1 + 1 should return 2');
+
+    </script>
+</body>
+</html>
