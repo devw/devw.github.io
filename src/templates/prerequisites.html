@@ -118,6 +118,14 @@
         </ul>
     </section>
     <section>
+        <h3>Node.js commands</h3>
+        <pre>
+    > npm outdated -g # to check if the installed modules are Latest
+    > npm update # to update installed modules
+    > npm -l 
+        </pre>
+    </section>
+    <section>
         <h3>Create a package.json file</h3>
         <ul>
             <li>This will ask you a bunch of questions, and then write a package.json for you:
@@ -290,8 +298,23 @@ Example: Serve ./web-root as http://localhost:8080/:
             </li>
             <li>
                 <pre>
-    vim package.json # remove grunt-filerev line
-    gem install compass
+
+    > vim package.json # remove grunt-filerev line
+    > gem install compass
+    > rm -rf node_modules
+    > npm install 
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>AngularJS-RequireJS + Sass</h3>
+        <ul>
+            <li>Prerequisites
+                <pre>
+    # install ruby
+    # install gem
+    > gem install compass            
                 </pre>
             </li>
         </ul>

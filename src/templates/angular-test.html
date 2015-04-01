@@ -44,7 +44,7 @@
         </ul>
     </section>
     <section>
-        <h3>Assert in javascript</h3>
+        <h3>Quick and Easy JavaScript Testing</h3>
         <ul>
             <li>html code
 <pre>
@@ -73,43 +73,33 @@
                 i = 0;
 
             for(; i < someArrayLen; i++) {
-                ...
+                setTimeout(function () {
+                        assert(count++ === i, 'Checking the value of; ' + i);
+                }, i * 300); 
             }
+        </pre>
+    </section>
+    <section>
+        <h3>Style of assert function</h3>
+        <pre>
+    &lt;style> 
+        .pass:before {
+            content: 'PASS ';
+            color: blue;
+            font-weight: bold;
+        }
+
+        .fail:before {
+            content: 'FAIL ';
+            color: red;
+            font-weight: bold;
+        }
+    &lt;/style>
         </pre>
     </section>
 </section>
 
 <section>
-    <section>
-        <h2>Angular/Jasmine, Setup</h2>
-        <ul>
-            <li>Create the following directory structure:
-                <pre>
-
-    > mkdir -p angular_test/{app,test}
-
-    > tree angular_test
-
-    angular_test/
-    ├── app
-    └── test
-                </pre>
-            </li>
-            <li>
-                To install tree command
-                <pre>
-
-    # OSx Iusers
-    > brew install tree
-    > sudo port install tree
-    > fink install tree
-
-    # Windows OS
-    > export PATH=/c/Windows/System32/:$PATH
-                </pre>
-            </li>
-        </ul>
-    </section>
     <section>
         <h3>Karma</h3>
         <ul>
@@ -176,6 +166,70 @@ Firefox 34.0.0 (Mac OS X 10.9): Executed 1 of 1 SUCCESS (0.01 secs / 0.001 secs)
             </li>
         </ul>
     </section>
+    <section>
+        <h3>Travis CI</h3>
+        <ul>
+            <li>Travis CI is an open-source hosted, distributed[1] continuous integration service used to build and test projects hosted at GitHub.</li>
+            <li>Travis CI is configured by adding a file named .travis.yml, which is a YAML format text file, to the root directory of the GitHub repository.</li>
+        </ul>
+        <pre>
+    language: node_js
+    node_js:
+      - "0.12"
+    before_script:
+      - npm update -g npm
+        </pre>
+    </section>
+    <section>
+        <h3>composer.json</h3>
+        <pre>
+{
+    ...,
+    "scripts": {
+        "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+    },
+    "dependencies": {
+        "jasmine-core": "^2.2.0",
+        "karma": "^0.12.31",
+        "karma-chrome-launcher": "^0.1.7",
+        "karma-firefox-launcher": "^0.1.4",
+        "karma-jasmine": "^0.3.5",
+        "karma-phantomjs-launcher": "^0.1.4"
+    },
+    ...
+}
+        </pre>
+    </section>
+</section>
+<section>
+    <h2>Angular/Jasmine, Setup</h2>
+    <ul>
+        <li>Create the following directory structure:
+            <pre>
+
+> mkdir -p angular_test/{app,test}
+
+> tree angular_test
+
+angular_test/
+├── app
+└── test
+            </pre>
+        </li>
+        <li>
+            To install tree command
+            <pre>
+
+# OSx Users
+> brew install tree
+> sudo port install tree
+> fink install tree
+
+# Windows OS
+> export PATH=/c/Windows/System32/:$PATH
+            </pre>
+        </li>
+    </ul>
 </section>
 <section>
     <section>
@@ -372,15 +426,10 @@ angular
         </pre>
     </section>
     <section>
-        <h3>pie.controller.spec.js</h3>
-        <ul>
-            <li>
-                <pre>
-    > mkdir test/controllers; touch test/controllers/pie.controller.spec.js
-                </pre>
-            </li>
-            <li>Install Sublime Text package that includes syntax highlighting, snippets and commands for Jasmine</li>
-        </ul>
+        <h3>Testing an Angular Controller</h3>
+        <pre>
+    
+        </pre>
     </section>
 </section>
 <section>
@@ -388,6 +437,65 @@ angular
         <h3>Angular/Jasmine, Filter Testing</h3>
         <ul>
             <li></li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h3>Protractor</h3>
+        <ul>
+            <li>Protractor is a Node.js program;</li>
+            <li>It is a framework to run tests as karma;</li>
+            <li>It is for AngularJS applications.</li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <pre>
+    > npm install -g protractor
+    > protractor --version
+    > npm -g list # list of the installed packaged
+    > # when you install protractor you install also selenium-webdriver
+        </pre>
+    </section>
+    <section>
+        <h3>Protractor prerequisites</h3>
+        <ul>
+            <li>Protractor works with the Selenium WebDriver and Selenium Server: java jdk
+                <pre>
+    > java -version 
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3></h3>
+        <pre>
+    > webdriver-manager update --standalone # to download or update the selenium-server-standalone
+    > webdriver-manager start  # to start selenium server
+        </pre>
+    </section>
+    <section>
+        <h3>Navigate in node modules directly</h3>
+        <ul>
+            <li>In protector folder we will find the example:
+                <pre>
+    > cd AppData/Roaming/npm/node_modules/protactor/examples
+    > protractor conf.js # to run a test
+
+                </pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>Protractor Locators</h3>
+        <ul>
+            <li>protractor.By.className('redBtn')</li>
+            <li>protractor.By.css('.redBtn')</li>
+            <li>protractor.By.id('loginButton')</li>
+            <li>protractor.By.linkText('Go Home')</li>
+            <li>protractor.By.partialLinktext('Home')</li>
+            reference: AngularJS E2E Testing Using Protractor
         </ul>
     </section>
 </section>
@@ -401,6 +509,15 @@ angular
         </ul>
     </section>
     <section>
+        <h3>beforeEach, afterEach </h3>
+    </section>
+    <section>
+        <h3>Writing css expression</h3>
+    </section>
+    <section>
+        <h3>Page object pattern</h3>
+    </section>
+    <section>
         <h3>Data Provider Pattern</h3>
         <ul>
             <li>DRYing Up Your JavaScript Jasmine Tests With the Data Provider Pattern</li>
@@ -408,6 +525,13 @@ angular
             <li>https://github.com/dfkaye/where.js</li>
         </ul>
     </section>
+</section>
+<section>
+    <ul>
+        <li>try to automate everything</li>
+        <li>you have rely on tests</li>
+        <li>Karma is agnostic testing framework</li>
+    </ul>
 </section>
 <section>
     <h3>References</h3>
