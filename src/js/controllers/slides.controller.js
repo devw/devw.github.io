@@ -30,7 +30,7 @@
             keyboard: {
                 13: 'next', // Go to the next slide when the ENTER key is pressed
                 27: function () {
-                    window.location.href = './';
+                    window.location.href = '/';
                 }, // When ESC is pressed
                 80: setPdfStylesheet // When "P" is pressed
             },
