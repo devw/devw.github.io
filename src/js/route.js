@@ -9,7 +9,9 @@
         'views/slides/unit-test.view',
         'views/slides/prerequisites.view',
         'views/slides/angularjs-test.view',
-        'views/slides/symfony-test.view'
+        'views/slides/symfony-test.view',
+        'views/slides/software-testing-general-concepts.view',
+        'views/slides/efficiency.view'
     ], function (
         indexView,
         slidesView,
@@ -18,7 +20,9 @@
         unitTestView,
         prerequisitesView,
         angularjsTestView,
-        symfonyTestView
+        symfonyTestView,
+        softwareTestingGeneralConceptsView,
+        efficiencyView
     ) {
         return ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
@@ -30,7 +34,9 @@
                 .state('slides.unit-test', unitTestView)
                 .state('slides.prerequisites', prerequisitesView)
                 .state('slides.angulajs-test', angularjsTestView)
-                .state('slides.symfony-test', symfonyTestView);
+                .state('slides.symfony-test', symfonyTestView)
+                .state('slides.software-testing-general-concepts', softwareTestingGeneralConceptsView)
+                .state('slides.efficiency', efficiencyView);
         }];
     });
 }(this.define));
