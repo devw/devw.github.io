@@ -1,0 +1,399 @@
+<section>
+    <h2>Software Testing</h2>
+    <h4>General concepts</h4>
+
+        <small>Created by <a href="#">Antonio Pierro</a> / <a href="http://twitter.com/an_pierro">@an_pierro</a></small>
+    </p>
+    <p>
+        <small>ITIS Scano - Cagliari April 2016</small>
+    </p>
+</section>
+<section>
+    <h2>Goal</h2>
+    <p>
+        We should understand:
+        <ol class="big-list">
+            <li class="fragment fade-in">Why is so importance the software testing.</li>
+            <li class="fragment fade-in">The basic concepts of software testing.</li>
+        </ol>
+    </p>
+    <aside class="notes">
+        The topic of this lesson is software testing or more in general software verification and software validation.
+        It is extremely important, is very challenging - you need to do in the right way.
+    </aside>
+</section>
+<section>
+    <h2>Question n.1</h2>
+    <p>50% of my company employees are testers, and the rest spends 50 of their time testing.</p>
+    <p>Who said that?
+        <ul>
+            <li>Steve Jobs</li>
+            <li>Henry Ford</li>
+            <li>Bill Gates</li>
+            <li>Enrico Mattei</li>
+        </ul>
+    </p>
+    <p>
+        from github quiz
+        tinyurl.com/itis5a
+    </p>
+    <aside class="notes">
+    Bill Gates -> Satya Nadella
+    Steve Jobs -> Tim Cook
+    CEO - amministratore delegato 
+    Enrico Mattei ENI, morto nel 1962...  Francesco Rosi
+    risorse naturali in italia ...  riesumazione della salma .. analisi di laboratorio degli degli oggetti... tritolo.
+    ENI -- cane a sei zampi - Opera nelle attivita' del petrolio e del gas naturale
+    QA - quality assurance.<br>This gives you an idea of importance of testing software in many others software company in general.
+    Introdusse il sistema di lavoro della catena di montaggio - contenere i prezzi dei beni prodotti attraverso la riduzione dei tempi di lavorazione - ottimizzare il lavoro degli operai e a ridurre i tempi necessari per il montaggio di un manufatto complesso.
+    Il caso Mattei è un film del 1972, diretto da Francesco Rosi. Presidente dell'ENI</aside>
+</section>
+<section>
+    <section>
+        <h2>Some example of software failure 1/5</h2>
+        <h4>Ariane 5</h4>
+        <p>
+            <span class="fragment fade-in" style="float: right; width: 450px">
+                <img src="src/images/software-testing-ariane5.png">
+            </span>
+            <ul style="float: left; width: 450px">
+                <li class="fragment fade-in">On June 4, 1996, the maiden flight of the European Ariane 5 launcher crashed about 40 seconds after takeoff.</li>
+                <li class="fragment fade-in">This event is commonly referred to as one of the most expensive software bugs in history: half a billion dollars.</li>
+            </ul>
+
+        </p>
+        <aside class="notes">
+        Agenzia Spaziale Europea
+        è utilizzato per la messa in orbita di satelliti geostazionari... (fino a tre alla volta )
+        e anche altre carichi secondari.
+        'geostazionaria' in quanto per un osservatore a terra, il satellite appare fermo in cielo, sospeso sempre al di sopra del medesimo punto dell'equatore, muovendosi alla stessa velocità angolare della Terra.
+        usato per le telecomunicazioni... trasmissione televisive...previsioni meteo.
+        maiden flight -> volo inagurale<br>
+         gruppo musicale heavy metal britannico</aside>
+    </section>
+    <section>
+        <h2>Some example of software failure 2/5</h2>
+        <h4>Mars Climate Orbiter</h4>
+        <p>
+            <img src="src/images/mars-climate-orbiter.png" style="float: right; width: 350px">
+            <ul style="float: left; width: 450px">
+                <li class="fragment fade-in">Communication with the spacecraft was lost, due to ground-based computer software failure which produced output in wrong system of measurements.</li>
+                <li class="fragment fade-in">The spacecraft disintegrated because of atmospheric stresses.</li>
+                <li class="fragment fade-in">The cost of the mission was $328 million</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Some example of software failure 3/5</h2>
+        <h4>Windows XP</h4>
+        <p class="fragment fade-in">
+            <img src="src/images/software-testing-windows.png">
+        </p>
+    </section>
+    <section>
+        <h2>Some example of software failure 4/5</h2>
+        <h4>OS X</h4>
+        <p class="fragment fade-in">
+            <img src="src/images/software-testing-osx.jpg">
+        </p>
+    </section>
+    <section>
+        <h2>Some example of software failure 5/5</h2>
+        <h4>Linux</h4>
+        <p class="fragment fade-in">
+            <img src="src/images/software-testing-kernel-panic-linux.png">
+        </p>
+    </section>
+</section>
+<section>
+    <h2>ISO 9000</h2>
+    <ul>
+        <li class="fragment fade-in">ISO 9000 is a set of standards for quality assurance systems.</li>
+        <li class="fragment fade-in">ISO 9000 defines Software Testing as:
+        <ol>
+            <li class="fragment fade-in">The process of exercising software to verify that it satisfies specified requirements,</li>
+            <li class="fragment fade-in">The standard procedure to detect errors.</li>
+        </ol>
+        </li>
+    </ul>
+    <aside class="notes">BS British Standards Institution -- organizzazione che promuovere in tutto il mondo norme a supporto del business. La maggior parte delle norme ISO derivano dalla BSI</aside>
+</section>
+<section>
+    <h2>Software is BUGGY!</h2>
+    <ul>
+        <li>The Economic Impacts of Inadequate Infrastructure for Software Testing. NIST - May 2003.</li>
+        <li class="fragment fade-in">Cost of bugs: $60 Billion/Year (0.6% gross domestic product (GDP)).</li>
+        <li class="fragment fade-in">On average: 2 bugs/KLOC (1000 Line of code).</li>
+        <li class="fragment fade-in">100% correct mass-market software is impossible.</li>
+        <li class="fragment fade-in">Testing can report only the presence of errors, not their absence</li>
+        <li class="fragment fade-in">We must verify the software as much as possible.</li>
+    </ul>
+    <aside class="notes">
+    Studio commisionato dal NIST
+    PIL...il valore monetario totale dei beni e servizi prodotti in un Paese in un anno.
+    National institute of 
+        K - kilo mille<br>
+        M - mega milione<br>
+        G - giga miliardo
+    </aside>
+</section>
+<section>
+    <section>
+        <h2>Why do Bugs Occur?</h2>
+        <img src="src/images/why-do-bugs-occur.png" width="600px">
+        <aside class="notes">
+            specification... analisi dei requisiti + progettazione concettuale
+        </aside>
+    </section>
+    <section>
+        <h2>The Cost of Bugs</h2>
+        <img src="src/images/cost-of-bugs.png">
+    </section>
+</section>
+<section>
+    <section>
+        <h2>Failure, Fault, and Error</h2>
+        <h4>Official IEEE terminology</h4>
+        <p>
+            <ul>
+                <li>Failure: an observable, incorrect behavior as compared to expected results.</li>
+                <li>Fault (aka BUG) is a defect within the system (software/hardware). May stay dormant for a long time before it manifests itself as an error. (segmentation fault)</li>
+                <li>Error: error is a mechanism by which the fault becomes apparent.</li>
+            </ul>
+        </p>
+        <aside class="notes">
+            IEEE - Istituto degli ingegneri elettrici ed elettronici
+            comportamento incorretto.<br>
+            All physical components are subject to failure all systems are subject to random faults.
+            Failure: Qualsiasi deviazione del comportamento osservato dal comportamento specificato.
+            Fault exmaple: 1. Out of memory error.  The programmer was not careful and consumed more memory than the hardware has available.
+2. Segmentation fault. The programmer attempts to point to a portion of memory that is not in its "space". For example, an pointer to a memory block pointing into memory space owned and used by the operating system.
+        </aside>
+    </section>
+    <section>
+        <h2>Example</h2>
+        <p>
+            <pre>
+                int doubleValue (int i) {
+                    int result;
+                    result = i * i;
+                    return result;
+                }
+            </pre>
+            <ul>
+                <li>A call to doubleValue(3) returns 9. What is it?</li>
+                <li class="fragment fade-in">It is a failure because it is an observable incorrect behavior of the program.</li>
+            </ul>
+        </p>
+        <aside class="notes">
+            Esempio di codice con un fault, che genera un failure.
+            Esempio di codice con un fault (result = i * i), che genera un failure.
+            non tutti i fault generano failure i = 2 -> result = 4
+        </aside>
+    </section>
+    <section>
+        <h2>Fault example</h2>
+        <pre class="fragment fade-in">
+            int* p1 = NULL; //p1 points to no memory address
+            *p1 = 3; //Segfault.
+        </pre>
+        <pre class="fragment fade-in">
+            int ia[10];
+            ia[10] = 4; // Someone forgot that arrays are 0-indexed! 
+                        // Possible Segfault.
+        </pre>
+        <p>
+            <ul>
+                <li class="fragment fade-in">Segmentation fault is also caused by hardware failures.</li>
+                <li class="fragment fade-in">All physical components are subject to failure.</li>
+                <li class="fragment fade-in">All systems are subject to random faults.</li>
+            </ul>
+        </p>
+    </section>
+</section>
+<section>
+    <section>
+        <h2>Test Data Selection</h2>
+        <p>
+            <img src="src/images/software-testing-test-data-selection-quiz.png">
+        </p>
+    </section>
+    <section>
+        <h4>Input domain -> Grid</h4>
+            <img src="src/images/grid.png" style="width: 600px">
+    </section>
+    <section>
+        <h4>Failures are generally sparse and dense</h4>
+            <img src="src/images/grid-2.png" style="width: 600px">
+            <aside class="notes">sparse .. scarso, rado</aside>
+    </section>
+    <section>
+        <h2>Random Testing</h2>
+        <ul>
+            <li class="fragment fade-in">Pick inputs randomly, in the input domain.</li>
+            <li class="fragment fade-in">Random testing eliminates designer bias.</li>
+            <li class="fragment fade-in">Imagine an infinite grid. It is very unlikely by picking randomly to get some failure.</li>
+            <li class="fragment fade-in">Fortunately not all is lost.</li>
+        </ul>
+        <aside class="notes">
+            12-Black-Box Testing Videos
+        </aside>
+    </section>
+    <section>
+        <h4>Failures are generally sparse and dense in some sub-domains</h4>
+            <img src="src/images/grid-3.png" style="width: 600px">
+    </section>
+    <section>
+        <h2>Correct approach</h2>
+        <ul>
+            <li class="fragment fade-in">Identify partitions of our domain.</li>
+            <li class="fragment fade-in">Select inputs from each partition (sub-domain).</li>
+            <li class="fragment fade-in">We can dramatically increase our chances to reveal faults in the code.</li>
+        </ul>
+    </section>
+</section>
+<section>
+    <section>
+        <h2>Inspections - reviews walkthroughs</h2>
+        <img src="src/images/software-testing.inspections.png">
+    </section>
+    <section>
+        <h2>Examining the Code 1/2</h2>
+        <ul>
+            <li>Peer Reviews. The team reviews the code together and looks for problems and oversights.</li>
+            <li>Coding Standards and Guidelines. It's equivalent to writing words that can be understood but don't meet the grammatical rules of the English language.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Examining the Code 2/2</h2>
+        <p>
+            <ul>
+                <li>Data Reference Errors. Caused by using a variable that has not been properly declared or initialized.</li>
+                <li>Computation Errors. Errors which are essentially bad math.</li>
+                <li>Comparison Errors. Less than, greater than, equal, not equal, true, false.</li>
+                <li>Control Flow Errors. Is it possible that a loop never executes?</li>
+                <li>Subroutine Parameter Errors. Subroutine parameter errors are due to incorrect passing of data to and from software subroutines.</li>
+            </ul>
+        </p>
+    </section>
+</section>
+<section>
+    <h2>Test</h2>
+    <p>
+        http://tinyurl.com/gpo2016
+    </p>
+</section>
+<!-- <section>
+    <h2>Testing</h2>
+    <p>Executing a program on a (tiny) sample of the input domain.
+        <ul>
+            <li>Dynamic technique.</li>
+            <li>Optimistic approximation.</li>
+        </ul>
+    </p>
+</section>
+<section>
+    <h2>Testing granularity levels</h2>
+    <ul>
+        <li>unit testing</li>
+        <li>integration testing</li>
+        <li>system testing</li>
+        <li>acceptance testing</li>
+        <li>regression testing</li>
+    </ul>
+</section> -->
+
+<section>
+    <h2>References</h2>
+    <p>
+        [1] The Economic Impacts of Inadequate Infrastructure for Software Testing. http://www.nist.gov/director/planning/upload/report02-3.pdf
+    </p>
+</section>
+
+<!--
+What is Testing?
+Running the program to see if it behaves as expected
+
+600 anni per finire il test
+L'esempio mostra come non sia possibile effettuare test esaustivo, ma siano necessarie strategie più raffinate.
+
+verifica statica (ispezione del codice) e verifica dinamica (protractor)
+
+Definito il dominio dei dati di I/O effettuare test case ottenuti selezionando
+valori ai bordi;
+valori “speciali”.
+Es. i colori di un semaforo
+Definiamo 4 classi di equivalenza:
+CE1 = “Rosso” (valida);
+CE2 = “Giallo” (valida);
+CE3 = “Verde” (valida);
+CE4 = “Blu” (non valida).
+
+Poichè l’esperienza quotidiana ci insegna che tipicamente gli errori di programmazione capitano al limite tra classi diverse, il testing dei valori limite si focalizza su questo aspetto.
+
+foo(x1, x2)
+a < = x1 < = b, c < = x2 < = d
+
+
+Testing can report only the presence of errors, not their absence
+-->
+<!--
+#### Quiz #### 
+
+# Which does ISO set the standards for quality assurance systems?
+
+ISO 900
+ISO 800
+ISO 8000
+ISO 9000
+
+# Which of the following is false about Software Testing?
+
+The error is a bug in the source code.
+A failure is an observable, incorrect behavior as compared to expected results.
+When segmentation fault occurs you have an error.
+
+
+# The goal of software testing is having a software 100% free of bugs.
+
+True / False
+
+
+# According the ISO guideline the software testing must:
+
+- just revealing errors
+- just verifying the requirements
+- revealing errors and verifying the requirements
+
+#In which software life-cycle does phase occur the majority of bug cases?
+
+Specification, Design, Code, Maintenance
+
+#A programmer should avoid attempting to test his own program.
+
+True or False
+
+#Testing is the process of demonstrating that errors are not present.
+
+True or False*
+
+#The correct approach to test the software is to:
+Select inputs from the boundary of each sub-domain
+Select inputs randomly
+
+#Which relation exists between 
+
+# According a paper published from NIST, the cost of bug in United States is around
+1/1000 GDP
+1/500 GDP
+1/200 GDP
+1/100 GDP
+1/50 GDP
+1/10 GDP
+1/5 GDP
+1/2 GDP
+
+
+
+
+
