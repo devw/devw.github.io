@@ -1,0 +1,269 @@
+<section>
+    <h2>Algorithmic Efficiency</h2>
+    <h4>General Concepts</h4>
+    <p>
+        <small>Created by <a href="#">Antonio Pierro</a> / <a href="http://twitter.com/an_pierro">@an_pierro</a></small>
+    </p>
+    <p>
+        <small>ITIS Scano - Cagliari April 2016</small>
+    </p>
+    <aside class="notes">
+        The topic of this lesson is about efficiency.
+        How can make program to work quickly enough to be useful.
+        It is very important in designing program.
+        If you write program badly the program can run more time than you can.
+    </aside>
+</section>
+<section>
+    <section>
+        <h2>Introduction 1/2</h2>
+        <p>
+            <ul>
+                <li>International Organization for Standardization (ISO)</li>
+                <li>It is headquartered in Geneva, Switzerland (164 member countries).</li>
+                <li>The standards help businesses increase productivity while minimizing errors and waste.</li>
+                <li>Reducing energy consumption and the dependency on fossil fuels is a major challenge.</li>
+                <li>Google search uses just about the same amount of energy that your body burns in ten seconds (1 kJ/per search).</li>
+            </ul>
+        </p>
+        <aside class="notes">ISO organizzazione che rilascia le linee guida per un sistema di gestione della qualità al fine di migliorare l'efficenza. (riduzione di sprechi.)
+    iso non è un acronimo - deriva invece dal greco ἴσος pronuncia isos uguale
+        </aside>
+    </section>
+    <section>
+        <h2>Introduction 2/2</h2>
+        <p>
+            <ul>
+                <li>Efficiency is the (often measurable) ability to avoid wasting materials, energy, efforts, money, and time in doing something or in producing a desired result.</li>
+                <li>In more mathematical or scientific terms, it is the capability of a specific application to produce a specific outcome with a minimum amount or quantity of waste, expense, or unnecessary effort.</li>
+            </ul>
+        </p>
+    </section>
+</section>
+
+<section>
+    <h2>Goal</h2>
+    <p>
+        <ul>
+            <li class="fragment fade-in">We are not going to be expert of this topic.</li>
+            <li class="fragment fade-in">We should have some intuition about the efficiency.</li>
+            <li class="fragment fade-in">Understand why some program takes much more time than others.</li>
+            <li class="fragment fade-in">How to avoid to write programs that will finish before you die.</li>
+        </ul>
+    </p>
+    <aside class="notes">
+        intuition .. sensazione, presagio, sesto senso.
+        bionformatica .. risoluzione di problemi biologici con metodi informatici. (discipline scientifiche) .. .analisi di genomi (il DNA) conservati nei database.
+        immaginate che ogni genoma sia un libro con tante lettere senza spazi..
+        ogni genoma contiene 23 coppie cromosomi..e ogni cromosoma può contenre fino a 250 milioni di lettere.
+    </aside>
+</section>
+
+<section>
+    <h2>What is efficiency?</h2>
+    <ul>
+        <li class="fragment fade-in">Efficiency is not about code details (changing some instruction).
+            <pre>
+a = x ? x : y;
+// The above expression is equivalent to the below expression
+a = x ?: y;
+// The above expression is clever but bad
+// because a complex line takes time to figure out.
+            </pre>
+            </li>
+        <li class="fragment fade-in">Efficiency is about choosing the right algorithm.</li>
+        <li class="fragment fade-in">Clever algorithms are hard to invent.</li>
+        <li class="fragment fade-in">We want to match a problem that some clever person already knows how to solve.</li>
+    </ul>
+    <aside class="notes">
+        How come I transform my problem to match a problem that some clever person already knows how to solve?</aside>
+</section>
+
+<section>
+    <h2>How do we think about efficiency?</h2>
+    <ul>
+        <li class="fragment fade-in">We think about efficiency in two dimensions, space and time. </li>
+        <li class="fragment fade-in">We can often trade one for the other.</li>
+        <li class="fragment fade-in">We are going to focus on time.</li>
+    </ul>
+    <aside class="notes">We can make a program run faster by using more memory or use less memory at the cost of making it run more slowly.</aside>
+</section>
+
+<section>
+    <section>
+        <h2>Time efficiency</h2>
+            <ul>
+                <li class="fragment fade-in">How long does some algorithm take to run?</li>
+                <li class="fragment fade-in">How would you go about answering that question?</li>
+                <li class="fragment fade-in">I can think to run an algorithm on some computer on some input and time it with my watch.</li>
+                <li class="fragment fade-in">That would be really a bad way to look at it.</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Why?</h2>
+        <ul>
+            <li class="fragment fade-in">It is influenced by the speed of the machine.</li>
+            <li class="fragment fade-in">It has to do with the cleverness of the compiler implementation.</li>
+            <li class="fragment fade-in">It depends upon the input.</li>
+        </ul>
+        <aside class="notes">
+            compiler transforms source code written in a programming language
+        </aside>
+    </section>
+
+    <section>
+        <h2>I need to get some way to talk about it more abstractly</h2>
+        <ul class="fragment fade-in">
+            We define a mathematical function where:
+            <ol>
+                <li class="fragment fade-in">the first natural number corresponds to the size of the input</li>
+                <li class="fragment fade-in">the result of the function is the number of steps that the computation will take for an input of that size</li>
+            </ol>
+            <pre class="fragment fade-in">
+
+T: N -> N
+
+            </pre>
+        </ul>
+    </section>
+    <section>
+        <h2>What is a step?</h2>
+        <p class="fragment fade-in">
+            We're going to use a model of the computer:
+            <ul>
+                <li class="fragment fade-in">Random-access machine (RAM).</li>
+                <li class="fragment fade-in">A step is an operation that takes constant time.</li>
+            </ul>
+        </p>
+
+        <aside class="notes">
+            In the early days of computers -> tape
+            Modern computers have what's called a memory hierarchy (gerarchie di memoria registri, cache, ram ) where you have levels of memory, the level one cache, the level two cache, the actual memory. And it can differ by say a factor of a 100
+        </aside>
+    </section>
+    <section>
+        <h2>How long an algorithm will take to run?</h2>
+        <p>
+            There are several different ways we could look at it (linear search):
+            <ul>
+                <li class="fragment fade-in">Best case</li>
+                <li class="fragment fade-in">Average case</li>
+                <li class="fragment fade-in">Worst case (Murphy's law)</li>
+            </ul>
+        </p>
+        <aside class="notes">What's the worst that can happen? And that's nice because it means that there are no surprises.</aside>
+    </section>
+</section>
+<section>
+    <section>
+        <h2>Example</h2>
+        <pre>
+def f(n):
+        assert n>= 0
+        answer = 1
+        while n > 1:
+                answer *= n
+                n -= 1
+        return answer
+        </pre>
+        <p>
+            2 + 3n + 1 
+        </p>
+    </section>
+</section>
+
+
+
+<section>
+
+
+## Efficiency is not about code details ##
+## Efficiency is about algorithms ##
+
+A successfully computer science maybe can invent one in his all career.
+I have invented zero very important algorithm in my career.
+Problem reduction
+## Reduce it to a previously solved problem. ##
+How to solve some problem in clever way compared to some problem already solved.
+
+When we think about efficiency we think about two dimension.
+## space and time ##.
+we can trade one for the other.
+we can make a program more faster using more memory.
+We are going to focus on time. Because people worry about this.
+Question 1: how long take to run one program?
+we can think to run a program in some computer and take the time.
+this is a bad way because is not a stable measure.
+## Computation complexity. ##
+it is influence by the #1 speed of machine # (3 minutes in my and one hour in yours)
+#2 Cleverness python implementation #
+#3 Depends upon the inputs #
+I need something in order to talk more abstractly.
+We can # counting the number of basic steps # 
+We can think about a function named time from natural number to natural number # T: N -> N#
+the first N corresponds to the size of inputs and the second the number of steps
+
+A step is an operation that takes constant time
+steps are not variable but constant.
+# steps takes constant time # (comparisons, array access , etc.)
+We use a model of a computer that is known as ## Random access memory ##
+In a ram access machine the instruction are executed one after the other cioè # sequential # one at the time
+We assume constant time to access memory
+# memory access constant time #
+In early days of computer this model was not accurate.. because memory was often a tape. .. reading something at the end of the tame takes much more time than reading something at the begging of the tape.
+In modern computer this assumption is not accurate because they have memory hierarchy... we have levels of memory ..and they hcan differ about hundreds to access the cache.. the cache take tracks of recent access object.
+But we analyze the alghorimt using the model of memory access of constant time.
+Some computer operates in parallel but we don't take in account this.
+The RAM model is quite good to understand algorithms.
+How much time does it take?
+we can think about:
+"Best case" (as an example you can think about linear search.. to found if an element is in the list)  the best case is 3 and i am searching for 4... This is the best case complexity.. it is the minimum running time over all inputs.
+"Worst case". What is the worst case of linear search? is not there.
+"Expected case" or average case , which happens most of the time.
+The expected case seems in principle the case that we should care about. the truth is that when you make algorithms analysis you never deals with the expected case because is too hard. (for exmaple ...what is the expected case for the linear search..we need some details model.. if the most of the time the element is not in the list... the average could be on the right.. if most of the time the things are in the list ..the expected should be in the middle)
+we don't focus also in the best case .. we don't believe to be lucky ...we believe in morphy law ...something bad can happen it will ..
+so these are the reasons why complexity analysis consider the worst case.
+The worst case provides a "upper bound" how bad things can possibly get...what is the worst that can happen.,, is nice because you can not have surprise.
+
+Let's look at an example
+
+2 + 3*n + 1
+I can do that but it is silly .. if n = 3000 i will have 9003 vs 9000 
+I can eliminate additive constant
+I care about "Growth with respect to size of input"
+even 3 I can eleminate because I have to think about big numbers.
+if n = 3h ... 3 hours and 9 hours make different
+but if n = 100 years 100 years and 300 years is too long anyway.
+typically will ignore multiplicative constant.
+
+"Big O notation O(n)" it is linear in n.
+Why we call it big O? someone can think about ... oh my god this program will never end
+
+O(1) .. constant .. .the time required does not depend by the size of the input. (not 1 step)
+O(log n)
+O(n) linear
+O(n log n ) log linear (it occurs surprisingly often)
+O(n ^c) polynomial
+O(c ^ n) exponential 
+to give an idea of what this means.. I produced some plots
+
+31:00
+
+</section>
+
+
+
+
+<section>
+    <h2>References</h2>
+    <p>
+        [1] The Economic Impacts of Inadequate Infrastructure for Software Testing. http://www.nist.gov/director/planning/upload/report02-3.pdf
+    </p>
+</section>
+
+
+
+
+
+
