@@ -13,8 +13,8 @@
     <p>
         We should understand:
         <ol class="big-list">
-            <li class="fragment fade-in">Why is so importance the software testing.</li>
-            <li class="fragment fade-in">The basic concepts of software testing.</li>
+            <li class="fragment fade-in">Why it is so important testing software.</li>
+            <li class="fragment fade-in">The basic concepts of Test Data Selection.</li>
         </ol>
     </p>
     <aside class="notes">
@@ -23,8 +23,9 @@
     </aside>
 </section>
 <section>
-    <h2>Question n.1</h2>
-    <p>50% of my company employees are testers, and the rest spends 50 of their time testing.</p>
+    <h2>Question n. 1</h2>
+    <p>50% of my company employees are testers, and the rest spends 50% of their time testing.</p>
+    <img src="src/images/qr-code-software-testing-1.jpg" style="float: right; width:200px;">
     <p>Who said that?
         <ul>
             <li>Steve Jobs</li>
@@ -34,8 +35,7 @@
         </ul>
     </p>
     <p>
-        from github quiz
-        tinyurl.com/itis5a
+        Please give your response <a href="http://tinyurl.com/itis5a-1">http://tinyurl.com/itis5a-1</a>
     </p>
     <aside class="notes">
     Bill Gates -> Satya Nadella
@@ -43,9 +43,10 @@
     CEO - amministratore delegato 
     Enrico Mattei ENI, morto nel 1962...  Francesco Rosi
     risorse naturali in italia ...  riesumazione della salma .. analisi di laboratorio degli degli oggetti... tritolo.
-    ENI -- cane a sei zampi - Opera nelle attivita' del petrolio e del gas naturale
+    AGIP -Azienda Generale Italiana Petroli- cane a sei zampe - Opera nelle attivita' del petrolio e del gas naturale
+    nel 2000 da ente pubblico a società per azioni
     QA - quality assurance.<br>This gives you an idea of importance of testing software in many others software company in general.
-    Introdusse il sistema di lavoro della catena di montaggio - contenere i prezzi dei beni prodotti attraverso la riduzione dei tempi di lavorazione - ottimizzare il lavoro degli operai e a ridurre i tempi necessari per il montaggio di un manufatto complesso.
+    Introdusse il sistema di lavoro della catena di montaggio 1911-1930 (Ford Model T) - contenere i prezzi dei beni prodotti attraverso la riduzione dei tempi di lavorazione - ottimizzare il lavoro degli operai e a ridurre i tempi necessari per il montaggio di un manufatto complesso.
     Il caso Mattei è un film del 1972, diretto da Francesco Rosi. Presidente dell'ENI</aside>
 </section>
 <section>
@@ -79,7 +80,7 @@
             <ul style="float: left; width: 450px">
                 <li class="fragment fade-in">Communication with the spacecraft was lost, due to ground-based computer software failure which produced output in wrong system of measurements.</li>
                 <li class="fragment fade-in">The spacecraft disintegrated because of atmospheric stresses.</li>
-                <li class="fragment fade-in">The cost of the mission was $328 million</li>
+                <li class="fragment fade-in">The cost of the mission was $328 millions.</li>
             </ul>
         </p>
     </section>
@@ -106,27 +107,39 @@
     </section>
 </section>
 <section>
-    <h2>ISO 9000</h2>
-    <ul>
-        <li class="fragment fade-in">ISO 9000 is a set of standards for quality assurance systems.</li>
-        <li class="fragment fade-in">ISO 9000 defines Software Testing as:
-        <ol>
-            <li class="fragment fade-in">The process of exercising software to verify that it satisfies specified requirements,</li>
-            <li class="fragment fade-in">The standard procedure to detect errors.</li>
-        </ol>
-        </li>
-    </ul>
-    <aside class="notes">BS British Standards Institution -- organizzazione che promuovere in tutto il mondo norme a supporto del business. La maggior parte delle norme ISO derivano dalla BSI</aside>
+    <section>
+        <h2>ISO</h2>
+        <ul>
+            <li>International Organization for Standardization (ISO).</li>
+            <li>It is headquartered in Geneva, Switzerland (164 member countries).</li>
+            <li>Its guidelines help businesses to increase productivity while minimizing errors and waste.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>ISO 9000 - Quality management</h2>
+        <ul>
+            <li class="fragment fade-in">ISO 9000 is a set of standards for quality management.</li>
+            <li class="fragment fade-in">ISO 9000 defines Software Testing as:
+            <ol>
+                <li class="fragment fade-in">the process of exercising software to verify that it satisfies specific requirements,</li>
+                <li class="fragment fade-in">the standard procedure to detect errors.</li>
+            </ol>
+            </li>
+        </ul>
+        <aside class="notes">
+        quality assurance systems -> garanzia della qualità dei sistemi
+        BS British Standards Institution -- organizzazione che promuovere in tutto il mondo norme a supporto del business. La maggior parte delle norme ISO derivano dalla BSI</aside>
+    </section>
 </section>
 <section>
     <h2>Software is BUGGY!</h2>
     <ul>
-        <li>The Economic Impacts of Inadequate Infrastructure for Software Testing. NIST - May 2003.</li>
-        <li class="fragment fade-in">Cost of bugs: $60 Billion/Year (0.6% gross domestic product (GDP)).</li>
-        <li class="fragment fade-in">On average: 2 bugs/KLOC (1000 Line of code).</li>
+        <li>"The Economic Impacts of Inadequate Infrastructure for Software Testing", in NIST, May 2003.</li>
+        <li class="fragment fade-in">Cost of bugs: $60 Billion/Year: 0.6% gross domestic product (GDP).</li>
+        <li class="fragment fade-in">On average: 2 bugs/KLOC (1000 Lines of code).</li>
         <li class="fragment fade-in">100% correct mass-market software is impossible.</li>
-        <li class="fragment fade-in">Testing can report only the presence of errors, not their absence</li>
-        <li class="fragment fade-in">We must verify the software as much as possible.</li>
+        <li class="fragment fade-in">Testing can only report the presence of errors, not their absence.</li>
+        <li class="fragment fade-in">We must test the software as much as possible.</li>
     </ul>
     <aside class="notes">
     Studio commisionato dal NIST
@@ -156,9 +169,9 @@
         <h4>Official IEEE terminology</h4>
         <p>
             <ul>
-                <li>Failure: an observable, incorrect behavior as compared to expected results.</li>
-                <li>Fault (aka BUG) is a defect within the system (software/hardware). May stay dormant for a long time before it manifests itself as an error. (segmentation fault)</li>
-                <li>Error: error is a mechanism by which the fault becomes apparent.</li>
+                <li>Failure: an observable, incorrect behavior when compared to expected results.</li>
+                <li>Fault (aka BUG): a defect within the system (software/hardware). It may stay dormant for a long time before it manifests itself as an error. (segmentation fault)</li>
+                <li>Error: a mechanism by which the fault becomes evident.</li>
             </ul>
         </p>
         <aside class="notes">
@@ -182,7 +195,7 @@
             </pre>
             <ul>
                 <li>A call to doubleValue(3) returns 9. What is it?</li>
-                <li class="fragment fade-in">It is a failure because it is an observable incorrect behavior of the program.</li>
+                <li class="fragment fade-in">It is a failure because it is an incorrect observable behavior of the program.</li>
             </ul>
         </p>
         <aside class="notes">
@@ -205,8 +218,8 @@
         <p>
             <ul>
                 <li class="fragment fade-in">Segmentation fault is also caused by hardware failures.</li>
-                <li class="fragment fade-in">All physical components are subject to failure.</li>
-                <li class="fragment fade-in">All systems are subject to random faults.</li>
+                <li class="fragment fade-in">All physical components are prone to failure.</li>
+                <li class="fragment fade-in">All systems are prone to random faults.</li>
             </ul>
         </p>
     </section>
@@ -230,10 +243,10 @@
     <section>
         <h2>Random Testing</h2>
         <ul>
-            <li class="fragment fade-in">Pick inputs randomly, in the input domain.</li>
+            <li class="fragment fade-in">Pick inputs randomly in the input domain.</li>
             <li class="fragment fade-in">Random testing eliminates designer bias.</li>
-            <li class="fragment fade-in">Imagine an infinite grid. It is very unlikely by picking randomly to get some failure.</li>
-            <li class="fragment fade-in">Fortunately not all is lost.</li>
+            <li class="fragment fade-in">Imagine an infinite grid. It is very unlikely by picking randomly to get some failures.</li>
+            <li class="fragment fade-in">Fortunately, nothing is lost.</li>
         </ul>
         <aside class="notes">
             12-Black-Box Testing Videos
@@ -246,9 +259,9 @@
     <section>
         <h2>Correct approach</h2>
         <ul>
-            <li class="fragment fade-in">Identify partitions of our domain.</li>
+            <li class="fragment fade-in">Identify partitions of your domain.</li>
             <li class="fragment fade-in">Select inputs from each partition (sub-domain).</li>
-            <li class="fragment fade-in">We can dramatically increase our chances to reveal faults in the code.</li>
+            <li class="fragment fade-in">We might greatly increase our chances to reveal faults in the code.</li>
         </ul>
     </section>
 </section>
@@ -261,18 +274,18 @@
         <h2>Examining the Code 1/2</h2>
         <ul>
             <li>Peer Reviews. The team reviews the code together and looks for problems and oversights.</li>
-            <li>Coding Standards and Guidelines. It's equivalent to writing words that can be understood but don't meet the grammatical rules of the English language.</li>
+            <li>Neglecting coding standards and guidelines. It is equivalent to writing words that might be understood but do not meet the grammatical rules of English.</li>
         </ul>
     </section>
     <section>
         <h2>Examining the Code 2/2</h2>
         <p>
             <ul>
-                <li>Data Reference Errors. Caused by using a variable that has not been properly declared or initialized.</li>
-                <li>Computation Errors. Errors which are essentially bad math.</li>
+                <li>Data Reference Errors. They are caused by using a variable that has not been properly declared or initialized.</li>
+                <li>Computation Errors. They essentially are bad math.</li>
                 <li>Comparison Errors. Less than, greater than, equal, not equal, true, false.</li>
-                <li>Control Flow Errors. Is it possible that a loop never executes?</li>
-                <li>Subroutine Parameter Errors. Subroutine parameter errors are due to incorrect passing of data to and from software subroutines.</li>
+                <li>Control Flow Errors. Is it possible that a loop is never executed?</li>
+                <li>Subroutine Parameter Errors. They are due to incorrect passing of data to and from software subroutines.</li>
             </ul>
         </p>
     </section>
@@ -280,7 +293,11 @@
 <section>
     <h2>Test</h2>
     <p>
-        http://tinyurl.com/gpo2016
+        <ol>
+            <li>http://tinyurl.com/gpo-5a</li>
+            <img src="src/images/qr-code-software-testing-2.jpg">
+            <li>https://github.com/gestione-progetto/junit</li>
+        </ol>
     </p>
 </section>
 <!-- <section>
@@ -340,7 +357,7 @@ Testing can report only the presence of errors, not their absence
 <!--
 #### Quiz #### 
 
-# Which does ISO set the standards for quality assurance systems?
+# Which is the ISO number that involve the standards for quality assurance systems?
 
 ISO 900
 ISO 800
@@ -365,7 +382,7 @@ True / False
 - just verifying the requirements
 - revealing errors and verifying the requirements
 
-#In which software life-cycle does phase occur the majority of bug cases?
+#In which software life-cycle phase does the majority of bug cases occur?
 
 Specification, Design, Code, Maintenance
 

@@ -15,3 +15,14 @@ ol.big-list li {
     line-height: 110%;
     padding: 12px;
 }
+.fragment.big {
+    font-size: 200%;
+}
+
+pre.big {
+    font-size: 105% !important;
+}
+
+.left {
+    text-align: left;
+}
