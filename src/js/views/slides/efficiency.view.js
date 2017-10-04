@@ -10,6 +10,7 @@
             data: {
                 css: [
                     'src/css/revealjs_themes/sky.css'
+
                 ]
             },
             template: efficiencyTemplate
